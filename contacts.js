@@ -1,10 +1,8 @@
 import { readFile, writeFile } from "fs/promises";
 import * as path from "path";
 import { nanoid } from "nanoid";
-import { json } from "stream/consumers";
 
-const contactsPath = path.join("./db", "contacts.json");
-console.log(contactsPath);
+const contactsPath = path.resolve("db", "contacts.json");
 
 export const listContacts = async () => {
   const data = await readFile(contactsPath);
